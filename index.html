@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mundo físico no euclideano de Poincaré</title>
+
+  <style>
+    :root {
+      --azul: #2336c7;
+      --fondo: #f6f7fb;
+      --texto: #1f2937;
+      --gris: #e5e7eb;
+      --blanco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2637d1, #6574ff);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 500;
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 1rem auto 0;
+      font-size: 1.15rem;
+    }
+
+    main {
+      width: min(1100px, 92%);
+      margin: 2rem auto;
+    }
+
+    section {
+      background: var(--blanco);
+      margin-bottom: 2rem;
+      padding: 2rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      color: var(--azul);
+      font-size: 1.9rem;
+      margin-top: 0;
+      font-weight: 500;
+    }
+
+    h3 {
+      color: #374151;
+      margin-top: 1.5rem;
+    }
+
+    strong {
+      color: #111827;
+    }
+
+    .formula {
+      text-align: center;
+      font-size: 1.4rem;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: #f3f4ff;
+      border-left: 5px solid var(--azul);
+      border-radius: 12px;
+    }
+
+    .grid-dos-columnas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .grafico {
+      border: 2px dashed #c7c9d9;
+      border-radius: 16px;
+      padding: 1rem;
+      background: #fafafa;
+      text-align: center;
+    }
+
+    .grafico img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .grafico iframe {
+      width: 100%;
+      height: 520px;
+      border: 1px solid var(--gris);
+      border-radius: 12px;
+      background: white;
+    }
+
+    .nota {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-top: 0.75rem;
+    }
+
+    ul {
+      padding-left: 1.3rem;
+    }
+
+    li {
+      margin-bottom: 0.8rem;
+    }
+
+    .actividad {
+      background: #fffbea;
+      border-left: 5px solid #f59e0b;
+      padding: 1.2rem;
+      border-radius: 12px;
+    }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 1.3rem;
+      }
+
+      .grafico iframe {
+        height: 360px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mundo físico no euclideano de Poincaré</h1>
+    <p>
+      Un experimento mental para pensar cómo la geometría del espacio percibido
+      puede depender de las leyes físicas con las que interactuamos con él.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Una interpretación física de la geometría hiperbólica</h2>
+      <p>
+        Este experimento mental constituye una brillante <strong>interpretación física de la geometría hiperbólica</strong>.
+        El mundo de Poincaré no es simplemente una fantasía, sino una forma de mostrar que la
+        <strong>estructura geométrica del espacio</strong> depende de las <strong>leyes físicas</strong>
+        con las que interactuamos con él.
+      </p>
+      <p>
+        Así, si las leyes de propagación de la luz o de la temperatura fueran distintas, también lo sería
+        la geometría del espacio percibido. De esta manera, la <strong>geometría no euclidiana</strong>
+        deja de ser una simple curiosidad formal y se convierte en una posible descripción de un entorno físico.
+      </p>
+    </section>
+
+    <section>
+      <h2>El mundo dentro de una esfera</h2>
+      <p>
+        Poincaré imagina un mundo dentro de una <strong>esfera</strong>, lleno de seres inteligentes que viven
+        en su interior. El medio dentro de la esfera posee un <strong>índice de refracción</strong> y una
+        <strong>temperatura</strong> que varían con la distancia al centro según la ley:
+      </p>
+
+      <div class="formula">
+        n = 1 / (R² − r²)
+      </div>
+
+      <p>
+        donde <strong>R</strong> es el radio de la esfera y <strong>r</strong> la distancia al centro.
+      </p>
+    </section>
+
+    <section>
+      <h2>Gráfico 3D interactivo</h2>
+      <p>
+        Acá podés incrustar el archivo HTML generado con Asymptote. Para que funcione, colocá el archivo
+        generado por Asymptote en la misma carpeta que este <code>index.html</code> y cambiá el nombre en el
+        atributo <code>src</code> del siguiente <code>iframe</code>.
+      </p>
+
+      <div class="grafico">
+        <!-- Cambiar "grafico3d.html" por el nombre real del HTML generado por Asymptote -->
+        <iframe src="grafico3d.html" title="Gráfico 3D del mundo de Poincaré"></iframe>
+        <p class="nota">Gráfico 3D de los “planos” en el experimento mental de Poincaré.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cómo se percibe este mundo</h2>
+      <div class="grid-dos-columnas">
+        <div>
+          <ul>
+            <li>
+              Los seres que habitan este mundo experimentan que sus pasos se acortan al acercarse a la frontera,
+              que nunca pueden alcanzar.
+            </li>
+            <li>
+              Para ellos, las “rectas” serían precisamente esas trayectorias luminosas curvas.
+            </li>
+            <li>
+              La luz no se propaga en líneas rectas euclidianas, sino en circunferencias ortogonales al borde de la esfera.
+            </li>
+          </ul>
+        </div>
+
+        <div class="grafico">
+          <!-- Reemplazar por el nombre de tu imagen -->
+          <img src="grafico-pasos.png" alt="Personas acercándose al borde inalcanzable del disco" />
+          <p class="nota">Ejemplo: seres cuyos pasos se acortan al acercarse al borde.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Trayectorias de luz como geodésicas</h2>
+      <div class="grid-dos-columnas">
+        <div class="grafico">
+          <!-- Reemplazar por el nombre de tu imagen -->
+          <img src="trayectorias-luz.png" alt="Trayectorias curvas de la luz dentro del disco" />
+          <p class="nota">Trayectorias de luz = geodésicas.</p>
+        </div>
+
+        <div>
+          <p>
+            En este medio, la luz sigue trayectorias curvas. Desde la perspectiva de los habitantes del mundo,
+            esas trayectorias cumplen el papel de las rectas: son los caminos naturales de propagación de la luz
+            y permiten definir la geometría del espacio que perciben.
+          </p>
+          <p>
+            En el modelo del disco de Poincaré, esas trayectorias se representan mediante arcos de circunferencias
+            que cortan ortogonalmente el borde del disco.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Actividad para pensar</h2>
+      <div class="actividad">
+        <p><strong>Consigna:</strong></p>
+        <p>
+          Expliquen con sus palabras por qué, en este mundo, una trayectoria curva podría ser considerada una “recta”
+          por sus habitantes. Luego respondan:
+        </p>
+        <ul>
+          <li>¿Qué papel cumple la luz en la construcción de la geometría percibida?</li>
+          <li>¿Por qué el borde del disco resulta inalcanzable?</li>
+          <li>¿Qué nos permite discutir este ejemplo sobre la relación entre matemática, física y experiencia?</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Página didáctica sobre el mundo físico no euclideano de Poincaré.
+  </footer>
+</body>
+</html>
